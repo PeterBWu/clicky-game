@@ -1,16 +1,17 @@
-import React from 'react';
-import Header from './components/Header';
-import Jumbotron from './components/JumboTron';
-import GameArea from './components/GameArea';
-import Footer from './components/Footer';
+import React from "react";
+import Header from "./components/Header";
+import Jumbotron from "./components/Jumbotron";
+import GameArea from "./components/GameArea";
+import Footer from "./components/Footer";
+
 function App() {
   return (
-    <div >
-      <Header/>
+    <div>
+      <Header />
       <div className="container">
-        <Jumbotron/>
-        <GameArea/>
-        <Footer/>
+        <Jumbotron />
+        <GameArea />
+        <Footer />
       </div>
     </div>
   );

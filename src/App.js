@@ -1,8 +1,17 @@
 import React from 'react';
+import Header from './components/Header';
+import Jumbotron from './components/JumboTron';
+import GameArea from './components/GameArea';
+import Footer from './components/Footer';
 function App() {
   return (
-    <div className="App">
-      <h1>hello world</h1>
+    <div >
+      <Header/>
+      <div className="container">
+        <Jumbotron/>
+        <GameArea/>
+        <Footer/>
+      </div>
     </div>
   );
 }

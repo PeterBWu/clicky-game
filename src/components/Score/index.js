@@ -1,10 +1,11 @@
 import React from 'react'
 
 const Score = props => {
+    const val = props.props
     return (
         <div>
-            <h1>Current Score:{props.currentScore}</h1>
-            <h1>Top Score:{props.topScore}</h1>
+            <p>Current Score:{val.currentScore}</p>
+            <p>Top Score:{val.topScore}</p>
         </div>
     )
 }

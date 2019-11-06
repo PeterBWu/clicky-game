@@ -2,8 +2,8 @@ import React from "react";
 
 const Tile = props => {
   return (
-    <div class="card" key={props.key}>
-      <img src={props.src} class="card-img-top" alt="..." />
+    <div className="card" onClick={()=>props.handleClick(props.card.id)}>
+      <img src={props.card.src} className="card-img-top" alt="..." />
     </div>
   );
 };

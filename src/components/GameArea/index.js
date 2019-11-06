@@ -1,25 +1,21 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Tile from './../Tile'
 
-class GameArea extends Component{
-    renderTiles = tileCount => {
-        const tiles = []
-        for(let i= 0; i < tileCount;i++){
-            tiles.push(i)
-        }
-        return(
-            <div>
-                {tiles.map((tile,index)=> <Tile prop={tile} key={index}/>)}
-            </div>
-        )
-    }
-    render(){
-        return(
-            <div>
+const GameArea = props =>{
+    return(
+        <div>
+        <div className="card-group">
+            {props.cards.slice(0,4).map(card=> <Tile card={card} key={card.id} handleClick={props.handleClick}/>)}
+        </div>
+        <div className="card-group">
+            {props.cards.slice(4,8).map(card=> <Tile card={card} key={card.id} handleClick={props.handleClick}/>)}
+        </div>
+        <div className="card-group">
+            {props.cards.slice(8,12).map(card=> <Tile card={card} key={card.id} handleClick={props.handleClick}/>)}
+        </div>
 
-            </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default GameArea

@@ -1,10 +1,15 @@
 import React from 'react'
+import Score from './../Score'
 
 const Header = props => {
     return (
         <header>
-            
-            <h1>Hello World</h1>
+            <div className="navbar navbar-default navbar-fixed-top">
+                <div className="container">
+            <h1>Clicky Game</h1>
+            <Score props={{...props}}/>
+            </div>
+            </div>
         </header>
     )
 }

@@ -2,7 +2,7 @@ import React from "react";
 
 const Tile = props => {
   return (
-    <div class="card">
+    <div class="card" key={props.key}>
       <img src={props.src} class="card-img-top" alt="..." />
     </div>
   );

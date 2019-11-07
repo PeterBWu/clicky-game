@@ -3,7 +3,11 @@ import React from "react";
 const Footer = props => {
   return (
     <footer>
-      <h1>Hello World</h1>
+      <div className="container">
+        <a href="https://github.com/PeterBWu/clicky-game">
+          <i class="fab fa-github"></i> GitHub
+        </a>
+      </div>
     </footer>
   );
 };

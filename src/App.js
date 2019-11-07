@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./components/Header";
 import GameArea from "./components/GameArea";
 import Footer from "./components/Footer";
+import './index.css'
 
 class App extends Component {
   state = {
@@ -58,7 +59,7 @@ class App extends Component {
         src: "https://picsum.photos/id/277/300/300"
       }
     ],
-    userMessage: "Click on a Tile to start"
+    userMessage: "Click on a Tile to start! Just don't click on the same tile twice!"
   };
   handleClick = id => {
     if (this.state.clickedId.includes(id)) {
@@ -75,6 +76,16 @@ class App extends Component {
         userMessage: "Incorrect! Start Over!!"
       });
     } else {
+      if (this.state.clickedId.length === this.state.cards.length-1){
+        this.setState({
+          currentScore: 0,
+          clickedId: [],
+          topScore: this.state.cards.length,
+          cards: this.state.cards.concat().sort(() => Math.random() - 0.5),
+          userMessage: "You Win!!!"
+        });
+      return;        
+      }
       this.setState({
         currentScore: this.state.currentScore + 1,
         clickedId: [...this.state.clickedId, id],
@@ -89,13 +100,12 @@ class App extends Component {
       <div>
         <Header
           currentScore={this.state.currentScore}
-          userMessage={this.state.userMessage}
           topScore={this.state.topScore}
         />
         <div className="container">
-          <GameArea handleClick={this.handleClick} cards={this.state.cards} />
-          <Footer />
+          <GameArea handleClick={this.handleClick} cards={this.state.cards} userMessage={this.state.userMessage} />
         </div>
+          <Footer />
       </div>
     );
   }
